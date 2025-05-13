@@ -86,7 +86,7 @@ def plotGenerator():
         l = 2 * l0
         
         # The grade of the steel
-        grade = st.selectbox('enter the grade of steel : ', [250, 415, 500])
+        grade = st.selectbox('enter the grade of steel : ', [250, 415, 500,550,600])
         
         # The grade of the concrete
         Fck = st.number_input('enter the grade of concrete :', min_value=0.1, step=0.1)
@@ -187,6 +187,12 @@ def plotGenerator():
             elif grade == 500:
                 ydata = np.array([0, 347.8, 369.6, 391.3, 413.0, 423.9, 434.8, 434.8, 434.8])
                 xdata = np.array([0, 0.00174, 0.00195, 0.00226, 0.00277, 0.00312, 0.00417, 0.005, 0.04])
+            elif grade == 550:
+                ydata = np.array([0,200,400,550,560,570,580,585,580,500])
+                xdata = np.array([0,0.0010,0.0020,0.00275,0.0035,0.0050,0.0100,0.0150,0.0200,0.0500])
+            elif grade == 600:
+                ydata = np.array([0,200,400,600,620,650,670,690,700,720,700,550])
+                xdata = np.array([0,0.0010,0.0020,0.0030,0.0040,0.0060,0.0080,0.0100,0.0120,0.150,0.02,0.05])
             elif grade == 250:
                 ydata = np.array([0, 217.5, 217.5, 217.5])
                 xdata = np.array([0, 0.001084, 0.005, 0.04])
@@ -329,7 +335,7 @@ def plotGenerator():
         d0 = st.number_input('enter the diameter of coulum in mm : ', min_value=min_d+1, step=1, value=min_d+1)
         d = 2*d0
         #the grade of steel
-        grade = st.selectbox('enter the grade of steel : ', [250,415,500])
+        grade = st.selectbox('enter the grade of steel : ', [250,415,500,550,600])
         #the grade of concrete
         Fck = st.number_input('enter the grade of concrete :', min_value=0.1, value=20.0)
 
@@ -419,6 +425,12 @@ def plotGenerator():
             elif grade == 500:
                 ydata = np.array([0,347.8,369.6,391.3,413.0,423.9,434.8,434.8,434.8])
                 xdata = np.array([0,0.00174,0.00195,0.00226,0.00277,0.00312,0.00417,0.005,0.04])
+            elif grade == 550:
+                ydata = np.array([0,200,400,550,560,570,580,585,580,500])
+                xdata = np.array([0,0.0010,0.0020,0.00275,0.0035,0.0050,0.0100,0.0150,0.0200,0.0500])
+            elif grade == 600:
+                ydata = np.array([0,200,400,600,620,650,670,690,700,720,700,550])
+                xdata = np.array([0,0.0010,0.0020,0.0030,0.0040,0.0060,0.0080,0.0100,0.0120,0.150,0.02,0.05])
             elif grade == 250:
                 ydata = np.array([0,217.5,217.5,217.5])
                 xdata = np.array([0,0.001084,0.005,0.04])
@@ -486,27 +498,27 @@ def plotGenerator():
 
 
     #test cases from the SP 16(standard curves)
-        """Test1,n=20,Dia=30,d'=100,D=1000,fs = 500,fck= 22.5"""
-        M7=np.array([0,0.03,0.057,0.06,0.071,0.075,0.089,0.0905,0.082])
-        P7=np.array([0.58,0.5,0.4,0.38,0.32,0.3,0.2,0.1,0])
+      #  """Test1,n=20,Dia=30,d'=100,D=1000,fs = 500,fck= 22.5"""
+       # M7=np.array([0,0.03,0.057,0.06,0.071,0.075,0.089,0.0905,0.082])
+       # P7=np.array([0.58,0.5,0.4,0.38,0.32,0.3,0.2,0.1,0])
         """Test2,n=10,Dia=26,d'=40,D=400,fs = 250,fck= 35.2"""
-        M1= np.array([0,0.015,0.04,0.06,0.069,0.076,0.081,0.0835,0.083,0.081,0.069])
-        P1=np.array([0.543,0.5,0.42,0.34,0.3,0.26,0.22,0.2,0.16,0.1,0])
+       # M1= np.array([0,0.015,0.04,0.06,0.069,0.076,0.081,0.0835,0.083,0.081,0.069])
+      #  P1=np.array([0.543,0.5,0.42,0.34,0.3,0.26,0.22,0.2,0.16,0.1,0])
         """Test3,n=14,Dia=25,d'=60,D=400,fs = 250,fck= 27.34"""
-        M2=np.array([0,0.023,0.04,0.052,0.066,0.075,0.087,0.1,0.105,0.103,0.102,0.098])
-        P2=np.array([0.675,0.6,0.54,0.5,0.44,0.4,0.34,0.24,0.18,0.1,0.06,0])
+       # M2=np.array([0,0.023,0.04,0.052,0.066,0.075,0.087,0.1,0.105,0.103,0.102,0.098])
+       # P2=np.array([0.675,0.6,0.54,0.5,0.44,0.4,0.34,0.24,0.18,0.1,0.06,0])
         """Test4,n=14,Dia=16,d'=20,D=400,fs = 250,fck= 22.4"""
-        M3=np.array([0,0.03,0.044,0.055,0.06,0.07,0.08,0.0805,0.08,0.078,0.075,0.064])
-        P3=np.array([0.51,0.42,0.38,0.34,0.32,0.28,0.2,0.16,0.14,0.1,0.06,0])
+       # M3=np.array([0,0.03,0.044,0.055,0.06,0.07,0.08,0.0805,0.08,0.078,0.075,0.064])
+       # P3=np.array([0.51,0.42,0.38,0.34,0.32,0.28,0.2,0.16,0.14,0.1,0.06,0])
         """Test5,n=6,Dia=30,d'=25,D=500,fs = 415,fck= 21.6"""
-        M4=np.array([0,0.038,0.05,0.066,0.07,0.087,0.1,0.103,0.1,0.096])
-        P4=np.array([0.598,0.5,0.46,0.4,0.38,0.3,0.2,0.1,0.04,0])
+      #  M4=np.array([0,0.038,0.05,0.066,0.07,0.087,0.1,0.103,0.1,0.096])
+      #  P4=np.array([0.598,0.5,0.46,0.4,0.38,0.3,0.2,0.1,0.04,0])
         """Test6,n=20,Dia=30,d'=100,D=1000,fs = 415,fck= 22.5"""
-        M5=np.array([0,0.02,0.04,0.049,0.06,0.068,0.08,0.085,0.084,0.074])
-        P5=np.array([0.546,0.5,0.44,0.4,0.34,0.3,0.2,0.14,0.1,0])
+      #  M5=np.array([0,0.02,0.04,0.049,0.06,0.068,0.08,0.085,0.084,0.074])
+      #  P5=np.array([0.546,0.5,0.44,0.4,0.34,0.3,0.2,0.14,0.1,0])
         """Test7,n=14,Dia=16,d'=20,D=400,fs = 500,fck= 22.4"""
-        M6=np.array([0,0.019,0.054,0.078,0.09,0.097,0.1,0.112,0.119,0.118,0.11])
-        P6=np.array([0.623,0.6,0.5,0.4,0.34,0.3,0.28,0.2,0.12,0.1,0])
+      #  M6=np.array([0,0.019,0.054,0.078,0.09,0.097,0.1,0.112,0.119,0.118,0.11])
+      #  P6=np.array([0.623,0.6,0.5,0.4,0.34,0.3,0.28,0.2,0.12,0.1,0])
 
         #interpolating to generate the curve
         int_cur = interp1d(sorted_force,np.array(org_moment), kind='cubic')
@@ -583,7 +595,7 @@ def plotGenerator():
         cc = 2*cc0
 
         #grade of the steel reinforcements
-        grade = st.selectbox('enter the grade of steel : ', [250,415,500])
+        grade = st.selectbox('enter the grade of steel : ', [250,415,500,550,600])
         #The grade of the concrete
         Fck = st.number_input('enter the grade of concrete :', min_value=0.1, value=20.0)
 
@@ -722,6 +734,12 @@ def plotGenerator():
             elif grade == 500:
                 ydata = np.array([0,347.8,369.6,391.3,413.0,423.9,434.8,434.8,434.8])
                 xdata = np.array([0,0.00174,0.00195,0.00226,0.00277,0.00312,0.00417,0.005,0.04])
+            elif grade == 550:
+                ydata = np.array([0,200,400,550,560,570,580,585,580,500])
+                xdata = np.array([0,0.0010,0.0020,0.00275,0.0035,0.0050,0.0100,0.0150,0.0200,0.0500])
+            elif grade == 600:
+                ydata = np.array([0,200,400,600,620,650,670,690,700,720,700,550])
+                xdata = np.array([0,0.0010,0.0020,0.0030,0.0040,0.0060,0.0080,0.0100,0.0120,0.150,0.02,0.05])
             elif grade == 250:
                 ydata = np.array([0,217.5,217.5,217.5])
                 xdata = np.array([0,0.001084,0.005,0.04])
@@ -870,7 +888,7 @@ def plotGenerator():
             ver_y.append(temp1)
 
         #grade of steel
-        grade = st.selectbox('enter the grade of steel : ', [250,415,500])
+        grade = st.selectbox('enter the grade of steel : ', [250,415,500,550,600])
         #The grade of the concrete
         Fck = st.number_input('enter the grade of concrete :', min_value=0.1, value=20.0)
 
@@ -991,6 +1009,12 @@ def plotGenerator():
             elif grade == 500:
                 ydata = np.array([0,347.8,369.6,391.3,413.0,423.9,434.8,434.8,434.8])
                 xdata = np.array([0,0.00174,0.00195,0.00226,0.00277,0.00312,0.00417,0.005,0.04])
+            elif grade == 550:
+                ydata = np.array([0,200,400,550,560,570,580,585,580,500])
+                xdata = np.array([0,0.0010,0.0020,0.00275,0.0035,0.0050,0.0100,0.0150,0.0200,0.0500])
+            elif grade == 600:
+                ydata = np.array([0,200,400,600,620,650,670,690,700,720,700,550])
+                xdata = np.array([0,0.0010,0.0020,0.0030,0.0040,0.0060,0.0080,0.0100,0.0120,0.150,0.02,0.05])    
             elif grade == 250:
                 ydata = np.array([0,217.5,217.5,217.5])
                 xdata = np.array([0,0.001084,0.005,0.04])
@@ -1114,3 +1138,4 @@ def plotGenerator():
 
 if __name__=="__main__":
     plotGenerator()
+
